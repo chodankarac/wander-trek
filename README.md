@@ -1,2 +1,0 @@
-# WanderTrek
-Trekking website
