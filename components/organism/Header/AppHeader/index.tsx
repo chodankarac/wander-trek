@@ -21,13 +21,14 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { setCloseNavMenu, setCloseUserMenu, setOpenNavMenu, setOpenUserMenu } from "@/features/Header/appHeaderSlice";
 import { RootState } from "@/app/store";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 const pages = ["Events", "Instructions", "AboutUs", "FAQ"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function AppHeader() {
-  const dispatch = useDispatch();
-  const { anchorElNav, anchorElUser } = useSelector((state: RootState) => state.appHeader);
+  const dispatch = useAppDispatch();
+  const { anchorElNav, anchorElUser } = useAppSelector((state: RootState) => state.appHeader);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     dispatch(setOpenNavMenu(event.currentTarget));
