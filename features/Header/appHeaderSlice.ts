@@ -1,3 +1,4 @@
+import { RootState } from "@/app/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 type initialState = {
@@ -27,5 +28,5 @@ const appHeaderSlice = createSlice({
   },
 });
 
-export default appHeaderSlice.reducer;
 export const { setOpenNavMenu, setCloseNavMenu, setOpenUserMenu, setCloseUserMenu } = appHeaderSlice.actions;
+export default appHeaderSlice.reducer;

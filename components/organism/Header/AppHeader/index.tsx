@@ -18,27 +18,30 @@ import {
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { setCloseNavMenu, setCloseUserMenu, setOpenNavMenu, setOpenUserMenu } from "@/features/Header/appHeaderSlice";
+import { RootState } from "@/app/store";
 
 const pages = ["Events", "Instructions", "AboutUs", "FAQ"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function AppHeader() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const dispatch = useDispatch();
+  const { anchorElNav, anchorElUser } = useSelector((state: RootState) => state.appHeader);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+    dispatch(setOpenNavMenu(event.currentTarget));
   };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
+    dispatch(setOpenUserMenu(event.currentTarget));
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    dispatch(setCloseNavMenu());
   };
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+    dispatch(setCloseUserMenu());
   };
   return (
     <AppBar>
