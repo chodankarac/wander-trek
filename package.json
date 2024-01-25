@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -26,5 +27,6 @@
     "react-redux": "^9.0.3",
     "typescript": "5.1.6",
     "yarn": "^1.22.21"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
