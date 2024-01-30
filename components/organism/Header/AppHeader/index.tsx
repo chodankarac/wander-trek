@@ -18,7 +18,6 @@ import {
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
 import { setCloseNavMenu, setCloseUserMenu, setOpenNavMenu, setOpenUserMenu } from "@/features/Header/appHeaderSlice";
 import { RootState } from "@/app/store";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
