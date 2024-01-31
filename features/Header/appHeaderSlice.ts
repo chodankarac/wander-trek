@@ -1,4 +1,3 @@
-import { RootState } from "@/app/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 type initialState = {
@@ -19,14 +18,8 @@ const appHeaderSlice = createSlice({
     setCloseNavMenu: (state) => {
       state.anchorElNav = null;
     },
-    setOpenUserMenu: (state, action) => {
-      state.anchorElUser = action.payload;
-    },
-    setCloseUserMenu: (state) => {
-      state.anchorElUser = null;
-    },
   },
 });
 
-export const { setOpenNavMenu, setCloseNavMenu, setOpenUserMenu, setCloseUserMenu } = appHeaderSlice.actions;
+export const { setOpenNavMenu, setCloseNavMenu } = appHeaderSlice.actions;
 export default appHeaderSlice.reducer;
