@@ -1,48 +1,27 @@
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Container,
-  Grid,
-  IconButton,
-  ImageList,
-  ImageListItem,
-  Menu,
-  MenuItem,
-  Stack,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Container, Grid, ImageList, ImageListItem, Menu, MenuItem, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import { setCloseNavMenu, setCloseUserMenu, setOpenNavMenu, setOpenUserMenu } from "@/features/Header/appHeaderSlice";
+import { setCloseNavMenu, setOpenNavMenu } from "@/features/Header/appHeaderSlice";
 import { RootState } from "@/app/store";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { Button } from "@/components/atoms/Button";
+import Typography from "@/components/atoms/Typography";
 
 const pages = ["Events", "Instructions", "AboutUs", "FAQ"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function AppHeader() {
   const dispatch = useAppDispatch();
-  const { anchorElNav, anchorElUser } = useAppSelector((state: RootState) => state.appHeader);
+  const { anchorElNav } = useAppSelector((state: RootState) => state.appHeader);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     dispatch(setOpenNavMenu(event.currentTarget));
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    dispatch(setOpenUserMenu(event.currentTarget));
   };
 
   const handleCloseNavMenu = () => {
     dispatch(setCloseNavMenu());
   };
 
-  const handleCloseUserMenu = () => {
-    dispatch(setCloseUserMenu());
-  };
   return (
     <AppBar>
       <Container maxWidth="xl">
@@ -51,13 +30,11 @@ export default function AppHeader() {
             container
             sx={{
               display: { md: "flex", sm: "none", xs: "none" },
+              justifyContent: "space-between",
             }}
             spacing={2}
           >
-            <Grid
-              item
-              sx={{ display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}
-            >
+            <Grid item sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
               <Stack direction="row" spacing={2}>
                 <ImageList variant="standard" cols={1}>
                   <ImageListItem>
@@ -67,19 +44,26 @@ export default function AppHeader() {
               </Stack>
             </Grid>
             <Grid item>
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "space-between" }}>
                 {pages.map((page) => (
-                  <Button key={page} sx={{ my: 2, color: "white", display: "block" }}>
+                  <Button key={page} sx={{ my: 2, display: "block", color: "white" }}>
                     {page}
                   </Button>
                 ))}
               </Box>
             </Grid>
           </Grid>
-          <Grid container>
-            <Grid item xs={4} sx={{ display: "flex", justifyContent: "center" }}>
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                <IconButton
+          <Grid container sx={{ display: { md: "none" } }}>
+            <Grid item xs={6} sx={{ display: "flex", alignItems: "center" }}>
+              <ImageList>
+                <ImageListItem sx={{ display: { md: "none" } }}>
+                  <Image src={"/assets/images/man-in-hike.svg"} width={30} height={30} alt="" />
+                </ImageListItem>
+              </ImageList>
+            </Grid>
+            <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+              <Box>
+                <Button
                   size="large"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
@@ -88,7 +72,7 @@ export default function AppHeader() {
                   color="inherit"
                 >
                   <MenuIcon />
-                </IconButton>
+                </Button>
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorElNav}
@@ -110,44 +94,6 @@ export default function AppHeader() {
                   {pages.map((page) => (
                     <MenuItem key={page} onClick={handleCloseNavMenu}>
                       <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </Box>
-            </Grid>
-            <Grid item xs={4} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <ImageList>
-                <ImageListItem sx={{ display: { md: "none" } }}>
-                  <Image src={"/assets/images/man-in-hike.svg"} width={30} height={30} alt="" />
-                </ImageListItem>
-              </ImageList>
-            </Grid>
-            <Grid item xs={4} sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Ashish" src="/static/images/avatar/2.jpg" />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                   ))}
                 </Menu>
