@@ -1,16 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Container,
-  Grid,
-  ImageList,
-  ImageListItem,
-  Menu,
-  MenuItem,
-  Stack,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Container, Grid, ImageList, ImageListItem, Menu, MenuItem, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
@@ -18,6 +6,7 @@ import { setCloseNavMenu, setOpenNavMenu } from "@/features/Header/appHeaderSlic
 import { RootState } from "@/app/store";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { Button } from "@/components/atoms/Button";
+import Typography from "@/components/atoms/Typography";
 
 const pages = ["Events", "Instructions", "AboutUs", "FAQ"];
 
