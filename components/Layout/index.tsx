@@ -8,7 +8,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <>
       <AppHeader />
-      <main style={{ minHeight: "calc(100vh)" }}>{children}</main>
+      {children}
     </>
   );
 }
