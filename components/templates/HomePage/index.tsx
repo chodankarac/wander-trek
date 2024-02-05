@@ -1,4 +1,4 @@
-import FallAnimationSlider from "@/components/organism/FallAnimationSlider";
+import { TrekImageCarousel } from "@/components/organism/TrekImageCarousel";
 
 const Images = [
   { src: "/public/assets/images/homepage/Image1.jpg", alt: "Image1", width: 1200, height: 600 },
@@ -9,7 +9,7 @@ const Images = [
 const HomePage = () => {
   return (
     <>
-      <FallAnimationSlider />
+      <TrekImageCarousel />
     </>
   );
 };

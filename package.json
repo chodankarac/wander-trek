@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.0",
     "@mui/material": "^5.14.20",
+    "@mui/styles": "^5.15.7",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
@@ -24,6 +25,7 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-material-ui-carousel": "^3.4.2",
     "react-redux": "^9.0.3",
     "typescript": "5.1.6",
     "yarn": "^1.22.21"
