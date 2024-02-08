@@ -1,3 +1,4 @@
+"use client";
 import { SxProps } from "@mui/material";
 import React, { ReactEventHandler, ReactNode } from "react";
 import { Menu as MuiMenu } from "@mui/icons-material";

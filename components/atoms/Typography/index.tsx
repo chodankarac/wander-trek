@@ -1,3 +1,4 @@
+"use client";
 import { Typography as MuiTypography } from "@mui/material";
 import React, { ReactNode } from "react";
 

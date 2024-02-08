@@ -1,3 +1,4 @@
+"use client";
 import { TrekImageCarousel } from "@/components/organism/TrekImageCarousel";
 
 const HomePage = () => {

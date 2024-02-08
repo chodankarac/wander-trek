@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactEventHandler, ReactNode } from "react";
 import { Button as MuiButton, SxProps } from "@mui/material";
 type ButtonProps = {

@@ -1,10 +1,11 @@
+"use client";
 import { AppBar, Box, Container, Grid, ImageList, ImageListItem, Menu, MenuItem, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import { setCloseNavMenu, setOpenNavMenu } from "@/features/Header/appHeaderSlice";
-import { RootState } from "@/app/store";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { RootState } from "@/rtk/store";
+import { useAppDispatch, useAppSelector } from "@/rtk/hooks";
 import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 
