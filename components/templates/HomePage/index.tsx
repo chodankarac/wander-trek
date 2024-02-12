@@ -2,11 +2,7 @@
 import { TrekImageCarousel } from "@/components/organism/TrekImageCarousel";
 
 const HomePage = () => {
-  return (
-    <>
-      <TrekImageCarousel />
-    </>
-  );
+  return <TrekImageCarousel />;
 };
 
 export default HomePage;
