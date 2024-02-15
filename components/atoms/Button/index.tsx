@@ -9,5 +9,9 @@ type ButtonProps = {
   color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 };
 export const Button = (props: ButtonProps) => {
-  return <MuiButton {...props}>{props.children}</MuiButton>;
+  return (
+    <MuiButton color={props.color ?? "primary"} {...props}>
+      {props.children}
+    </MuiButton>
+  );
 };
