@@ -1,6 +1,5 @@
 import { TrekImageCarousel } from "@/components/organism/TrekImageCarousel";
 import UpcomingEvents from "@/components/organism/UpcominEvents";
-import { Padding } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
 export default function Home() {

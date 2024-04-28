@@ -18,7 +18,7 @@ export const TrekImageCarousel = () => {
           <Image
             src={imageUrl}
             alt={`Trekking Image ${index + 1}`}
-            style={{ width: "100%", height: "27rem", objectFit: "cover" }}
+            style={{ width: "100%", height: "32rem", objectFit: "cover" }}
           />
         </div>
       ))}

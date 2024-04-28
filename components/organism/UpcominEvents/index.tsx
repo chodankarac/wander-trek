@@ -1,13 +1,16 @@
 import { Button } from "@/components/atoms/Button";
+import Typography from "@/components/atoms/Typography";
 import { response } from "@/jsonFiles/TourismCards";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia } from "@mui/material";
 import React from "react";
 
 const UpcomingEvents = () => {
   return (
     <>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Button variant="contained">Upcoming Event</Button>
+        <Button size="large" variant="contained">
+          <Typography variant="h6">Upcoming Event</Typography>
+        </Button>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
@@ -23,7 +26,7 @@ const UpcomingEvents = () => {
           {response.result.map((value, index) => (
             <Card key={index}>
               <CardMedia
-                sx={{ height: 140, width: 160 }}
+                sx={{ height: 300, width: 500 }}
                 image={`/assets/images/homepage/${value.image}.jpg`}
                 title="blue water hiking"
               />

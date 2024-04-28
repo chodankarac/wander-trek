@@ -21,6 +21,7 @@ export const Button = (props: ButtonProps) => {
     <MuiButton
       color={props.color ?? "primary"}
       variant={props.variant ?? "outlined"}
+      size={props.size ?? "medium"}
       {...props}
     >
       {props.children}
