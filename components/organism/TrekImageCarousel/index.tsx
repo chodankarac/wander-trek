@@ -2,6 +2,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
+import { Padding } from "@mui/icons-material";
 
 export const TrekImageCarousel = () => {
   const trekkingImages = [
@@ -18,7 +19,12 @@ export const TrekImageCarousel = () => {
           <Image
             src={imageUrl}
             alt={`Trekking Image ${index + 1}`}
-            style={{ width: "100%", height: "32rem", objectFit: "cover" }}
+            style={{
+              width: "100%",
+              height: "21rem",
+              objectFit: "cover",
+              paddingTop: "5rem",
+            }}
           />
         </div>
       ))}

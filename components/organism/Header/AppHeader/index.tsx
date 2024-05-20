@@ -45,6 +45,7 @@ export default function AppHeader() {
             display: { md: "flex", sm: "none", xs: "none" },
             justifyContent: "space-between",
             backgroundColor: "#EFF7FE",
+            alignItems: "center",
           }}
           spacing={2}
         >
@@ -57,17 +58,23 @@ export default function AppHeader() {
             }}
           >
             <Stack direction="row" spacing={2} sx={{ paddingLeft: "2rem" }}>
-              <ImageList variant="standard" cols={1}>
-                <ImageListItem>
-                  <Image
-                    src={"/assets/images/man-in-hike.svg"}
-                    width={40}
-                    height={40}
-                    alt=""
-                  />
-                </ImageListItem>
-              </ImageList>
+              <Image
+                src={"/assets/images/trek-blazers.png"}
+                width={80}
+                height={80}
+                alt=""
+              />
             </Stack>
+            <Typography
+              sx={{
+                paddingLeft: 2,
+                fontFamily: "cursive",
+                color: "black",
+              }}
+              variant="h3"
+            >
+              Trek Blazers
+            </Typography>
           </Grid>
           <Grid item>
             <Box
@@ -103,7 +110,7 @@ export default function AppHeader() {
             <ImageList>
               <ImageListItem sx={{ display: { md: "none" } }}>
                 <Image
-                  src={"/assets/images/man-in-hike.svg"}
+                  src={"/assets/images/trek-blazers.png"}
                   width={30}
                   height={30}
                   alt=""

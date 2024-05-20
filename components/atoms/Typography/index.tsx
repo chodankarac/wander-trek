@@ -1,5 +1,5 @@
 "use client";
-import { Typography as MuiTypography } from "@mui/material";
+import { Typography as MuiTypography, SxProps } from "@mui/material";
 import React, { ReactNode } from "react";
 
 type TypographyProps = {
@@ -22,10 +22,15 @@ type TypographyProps = {
     | "subtitle2";
   gutterBottom?: boolean;
   component?: string;
+  sx?: SxProps;
 };
 const Typography = (props: TypographyProps) => {
   return (
-    <MuiTypography textAlign={props.textAlign ?? "center"} variant={props.variant ?? "body1"} {...props}>
+    <MuiTypography
+      textAlign={props.textAlign ?? "center"}
+      variant={props.variant ?? "body1"}
+      {...props}
+    >
       {props.children}
     </MuiTypography>
   );

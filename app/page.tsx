@@ -4,7 +4,13 @@ import { Box } from "@mui/material";
 
 export default function Home() {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+      }}
+    >
       <TrekImageCarousel />
       <UpcomingEvents />
     </Box>

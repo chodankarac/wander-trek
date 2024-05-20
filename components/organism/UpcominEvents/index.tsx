@@ -20,13 +20,13 @@ const UpcomingEvents = () => {
             justifyContent: "center",
             minWidth: 275,
             gap: 5,
-            paddingTop: 5,
+            paddingTop: 1,
           }}
         >
           {response.result.map((value, index) => (
             <Card key={index}>
               <CardMedia
-                sx={{ height: 300, width: 500 }}
+                sx={{ height: 180, width: 500 }}
                 image={`/assets/images/homepage/${value.image}.jpg`}
                 title="blue water hiking"
               />
@@ -37,13 +37,18 @@ const UpcomingEvents = () => {
                   justifyContent: "center",
                 }}
               >
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography
+                  gutterBottom
+                  variant="h6"
+                  sx={{ fontWeight: "bold" }}
+                  component="div"
+                >
                   {value.touristPlace}
                 </Typography>
                 <Typography gutterBottom variant="subtitle1" component="div">
                   Grade:{value.grade}
                 </Typography>
-                <Typography gutterBottom variant="subtitle2" component="div">
+                <Typography gutterBottom variant="subtitle1" component="div">
                   Trek Fee:{value.fee}
                 </Typography>
                 <Button
@@ -51,7 +56,7 @@ const UpcomingEvents = () => {
                     backgroundColor: "blue",
                     color: "white",
                     borderRadius: "3rem",
-                    fontSize: "0.6rem",
+                    fontSize: "0.9rem",
                   }}
                   size="medium"
                 >
