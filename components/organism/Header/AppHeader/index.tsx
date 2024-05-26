@@ -5,6 +5,7 @@ import {
   Grid,
   ImageList,
   ImageListItem,
+  Link,
   Menu,
   MenuItem,
   Stack,
@@ -46,8 +47,8 @@ export default function AppHeader() {
             justifyContent: "space-between",
             backgroundColor: "#EFF7FE",
             alignItems: "center",
+            paddingX: 2,
           }}
-          spacing={2}
         >
           <Grid
             item
@@ -58,50 +59,88 @@ export default function AppHeader() {
             }}
           >
             <Stack direction="row" spacing={2} sx={{ paddingLeft: "2rem" }}>
-              <Image
-                src={"/assets/images/trek-blazers.png"}
-                width={80}
-                height={80}
-                alt=""
-              />
+              <Link sx={{ textDecoration: "none" }} href="/">
+                <Image
+                  src={"/assets/images/trek-blazers.png"}
+                  width={80}
+                  height={80}
+                  alt=""
+                />
+              </Link>
             </Stack>
-            <Typography
-              sx={{
-                paddingLeft: 2,
-                fontFamily: "cursive",
-                color: "black",
-              }}
-              variant="h3"
-            >
-              Trek Blazers
-            </Typography>
+            <Link sx={{ textDecoration: "none" }} href="/">
+              <Typography
+                sx={{
+                  paddingLeft: 2,
+                  fontFamily: "cursive",
+                  color: "black",
+                }}
+                variant="h4"
+              >
+                Trek Blazers
+              </Typography>
+            </Link>
           </Grid>
           <Grid item>
             <Box
               sx={{
                 display: { xs: "none", md: "flex" },
                 justifyContent: "space-between",
+                gap: 3,
               }}
             >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    borderWidth: "0",
-                    paddingRight: "2rem",
-                  }}
-                >
-                  <label
-                    style={{
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    {page}
-                  </label>
-                </Button>
-              ))}
+              <Link
+                href="/events"
+                sx={{
+                  fontSize: "1.1rem",
+                  textDecoration: "none",
+                  color: "#000000",
+                  cursor: "pointer",
+                  "&:hover": { color: "#1976d2" },
+                  "&:active": { color: "#0a2f54" },
+                }}
+              >
+                EVENTS
+              </Link>
+              <Link
+                href="/instructions"
+                sx={{
+                  fontSize: "1.1rem",
+                  textDecoration: "none",
+                  color: "#000000",
+                  cursor: "pointer",
+                  "&:hover": { color: "#1976d2" },
+                  "&:active": { color: "#0a2f54" },
+                }}
+              >
+                INSTRUCTIONS
+              </Link>
+              <Link
+                href="/about"
+                sx={{
+                  fontSize: "1.1rem",
+                  textDecoration: "none",
+                  color: "#000000",
+                  cursor: "pointer",
+                  "&:hover": { color: "#1976d2" },
+                  "&:active": { color: "#0a2f54" },
+                }}
+              >
+                ABOUT US
+              </Link>
+              <Link
+                href="/faq"
+                sx={{
+                  fontSize: "1.1rem",
+                  textDecoration: "none",
+                  color: "#000000",
+                  cursor: "pointer",
+                  "&:hover": { color: "#1976d2" },
+                  "&:active": { color: "#0a2f54" },
+                }}
+              >
+                FAQ
+              </Link>
             </Box>
           </Grid>
         </Grid>
@@ -156,11 +195,12 @@ export default function AppHeader() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Events</Typography>
+                  <Typography textAlign="center">INSTRUCTIONS</Typography>
+                  <Typography textAlign="center">ABOUT US</Typography>
+                  <Typography textAlign="center">FAQ</Typography>
+                </MenuItem>
               </Menu>
             </Box>
           </Grid>
