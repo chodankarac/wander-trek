@@ -35,6 +35,7 @@ const UpcomingEvents = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 <Typography
@@ -52,13 +53,9 @@ const UpcomingEvents = () => {
                   Trek Fee:{value.fee}
                 </Typography>
                 <Button
-                  sx={{
-                    backgroundColor: "blue",
-                    color: "white",
-                    borderRadius: "3rem",
-                    fontSize: "0.9rem",
-                  }}
+                  variant="contained"
                   size="medium"
+                  sx={{ borderRadius: "3rem", maxWidth: "10rem" }}
                 >
                   More Details
                 </Button>
