@@ -38,7 +38,7 @@ export default function AppHeader() {
   };
 
   return (
-    <AppBar>
+    <AppBar position="static">
       <Toolbar disableGutters>
         <Grid
           container

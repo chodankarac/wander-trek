@@ -23,7 +23,6 @@ export const TrekImageCarousel = () => {
               width: "100%",
               height: "21rem",
               objectFit: "cover",
-              paddingTop: "5rem",
             }}
           />
         </div>
