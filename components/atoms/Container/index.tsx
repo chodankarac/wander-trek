@@ -1,12 +1,16 @@
 import React, { ReactNode } from "react";
-import { Container as MuiContainer, SxProps } from "@mui/material";
+import {
+  Container as MuiContainer,
+  ContainerProps as MuiContainerProps,
+  SxProps,
+} from "@mui/material";
 
-type ContainerProps = {
+type ContainerProps = MuiContainerProps & {
   sx?: SxProps;
   children: ReactNode;
 };
 const Container = (props: ContainerProps) => {
-  return <MuiContainer>{props.children}</MuiContainer>;
+  return <MuiContainer {...props}>{props.children}</MuiContainer>;
 };
 
 export default Container;
