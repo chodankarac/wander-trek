@@ -1,10 +1,12 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
-import appHeaderReducer from "../features/Header/appHeaderSlice";
+import appHeaderReducer from "../components/organism/Header/AppHeader/appHeaderSlice";
+import instructionPageReducer from "../app/instructions/instructionSlice";
 
 export const store = configureStore({
   reducer: {
     appHeader: appHeaderReducer,
+    instructionPage: instructionPageReducer,
   },
 });
 

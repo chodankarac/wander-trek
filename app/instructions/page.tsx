@@ -1,6 +1,7 @@
 "use client";
 import Container from "@/components/atoms/Container";
 import Typography from "@/components/atoms/Typography";
+import { useAppDispatch, useAppSelector } from "@/rtk/hooks";
 import {
   Card,
   CardContent,
@@ -9,28 +10,31 @@ import {
   List,
   ListItem,
 } from "@mui/material";
+import { RootState } from "@reduxjs/toolkit/query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { setRules } from "./instructionSlice";
 
 const Instructions = () => {
-  interface Rule {
-    id: number;
-    title: string;
-    description: string;
-  }
+  // const [rules, setRules] = useState<Rule[]>([]);
+  const dispatch = useAppDispatch();
+  const rules = useAppSelector(
+    (state: RootState) => state.instructionPage.rules
+  );
 
-  const [rules, setRules] = useState<Rule[]>([]);
   const fetchRules = async () => {
     try {
       const response = await axios.get(`/api/rules`);
-      setRules(response.data.rules);
+      dispatch(setRules(response.data.rules));
     } catch (error) {
       console.error("Failed to fetch rules:", error);
     }
   };
+
   useEffect(() => {
     fetchRules();
   }, []);
+
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom align="center">

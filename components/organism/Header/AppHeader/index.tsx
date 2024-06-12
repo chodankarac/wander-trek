@@ -14,14 +14,11 @@ import {
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import {
-  setCloseNavMenu,
-  setOpenNavMenu,
-} from "@/features/Header/appHeaderSlice";
 import { RootState } from "@/rtk/store";
 import { useAppDispatch, useAppSelector } from "@/rtk/hooks";
 import { Button } from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
+import { setCloseNavMenu, setOpenNavMenu } from "./appHeaderSlice";
 
 const pages = ["Events", "Instructions", "AboutUs", "FAQ"];
 
