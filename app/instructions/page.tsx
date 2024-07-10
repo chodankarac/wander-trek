@@ -10,30 +10,26 @@ import {
   List,
   ListItem,
 } from "@mui/material";
-import { RootState } from "@reduxjs/toolkit/query";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { setRules } from "./instructionSlice";
 
 const Instructions = () => {
-  // const [rules, setRules] = useState<Rule[]>([]);
   const dispatch = useAppDispatch();
-  const rules = useAppSelector(
-    (state: RootState) => state.instructionPage.rules
-  );
+  const rules = useAppSelector((state) => state.instructionPage.rules);
 
-  const fetchRules = async () => {
+  const fetchRules = useCallback(async () => {
     try {
       const response = await axios.get(`/api/rules`);
       dispatch(setRules(response.data.rules));
     } catch (error) {
       console.error("Failed to fetch rules:", error);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchRules();
-  }, []);
+  }, [fetchRules]);
 
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>

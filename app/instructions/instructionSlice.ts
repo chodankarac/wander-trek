@@ -6,10 +6,10 @@ type Rule = {
   title: string;
   description: string;
 };
-type initialState = {
+type InitialState = {
   rules: Rule[];
 };
-const initialState: initialState = {
+const initialState: InitialState = {
   rules: [],
 };
 const instructionSlice = createSlice({
