@@ -126,7 +126,7 @@ export default function AppHeader() {
                 ABOUT US
               </Link>
               <Link
-                href="/faq"
+                href="/FaqPage"
                 sx={{
                   fontSize: "1.1rem",
                   textDecoration: "none",
