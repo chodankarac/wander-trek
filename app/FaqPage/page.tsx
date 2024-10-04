@@ -28,8 +28,14 @@ const FaqPage = () => {
   }, [fetchFaqs]);
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h3" align="center" sx={{ marginBottom: 3 }}>
+    <Container maxWidth="md" sx={{ mt: 4 }}>
+      <Typography
+        variant="h4"
+        gutterBottom
+        component="h1"
+        align="center"
+        sx={{ marginBottom: 3 }}
+      >
         FAQ
       </Typography>
       {faqs &&
