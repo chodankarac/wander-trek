@@ -62,6 +62,7 @@ export default function AppHeader() {
                   width={80}
                   height={80}
                   alt=""
+                  priority={true}
                 />
               </Link>
             </Stack>
@@ -150,6 +151,7 @@ export default function AppHeader() {
                   width={30}
                   height={30}
                   alt=""
+                  priority={true}
                 />
               </ImageListItem>
             </ImageList>
