@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import TerrainIcon from "@mui/icons-material/Terrain";
 import PersonIcon from "@mui/icons-material/Person";
-import { HealthAndSafety } from "@mui/icons-material";
+import { Event, HealthAndSafety } from "@mui/icons-material";
 
 const About = () => {
   return (
@@ -29,20 +29,18 @@ const About = () => {
         <div>
           <h2>About us</h2>
           <p style={{ fontSize: "1rem" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eius
-            distinctio expedita fuga praesentium incidunt perspiciatis magnam
-            velit in at repellat, ex enim necessitatibus omnis quos. Tempora
-            numquam soluta repudiandae?
+            At Trek blazers, we’re dedicated to crafting unforgettable trekking
+            experiences for adventurers of all levels. Founded by passionate
+            trekkers, we specialize in guiding you through stunning landscapes
+            while ensuring safety, sustainability, and authentic cultural
+            immersion.
+            <br />
+            Whether you’re a beginner or a seasoned hiker, we promise a journey
+            that’s memorable, meaningful, and full of breathtaking moments.
           </p>
         </div>
         <div>
           <h2>Why trek with us?</h2>
-          <p style={{ fontSize: "1rem" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eius
-            distinctio expedita fuga praesentium incidunt perspiciatis magnam
-            velit in at repellat, ex enim necessitatibus omnis quos. Tempora
-            numquam soluta repudiandae?
-          </p>
           <div
             style={{
               display: "flex",
@@ -119,7 +117,7 @@ const About = () => {
               gap: "1rem",
             }}
           >
-            <HealthAndSafety style={{ color: "red" }} />
+            <Event style={{ color: "red" }} />
             &nbsp;
             <div>
               <h3>Trek for All Seasons</h3>
@@ -134,6 +132,28 @@ const About = () => {
                 itineraries tailored to the unique conditions of each season.
                 Whether its summer, winter, or the monsoon, we have treks suited
                 to every time of year.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Staff and Instructors</h2>
+          <div style={{ display: "flex", gap: 30, alignItems: "center" }}>
+            <Image
+              src={"/assets/images/homepage/guy-trek.jpg"}
+              alt="staff1"
+              height={80}
+              width={80}
+              style={{ borderRadius: "50%" }}
+            />
+            <div>
+              <em style={{ fontWeight: "bold" }}>Instructor</em>
+              <h3>Marlo Johnson</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                culpa architecto neque officia, animi consequuntur, voluptas
+                iste earum esse reiciendis laudantium quia. At quasi impedit
+                quibusdam nostrum nesciunt deleniti consequatur?
               </p>
             </div>
           </div>
