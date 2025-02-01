@@ -8,7 +8,8 @@ export default function Home() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: "20px",
+        gap: "4",
+        padding:"20px"
       }}
     >
       <TrekImageCarousel />
